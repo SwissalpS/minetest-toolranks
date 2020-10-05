@@ -100,10 +100,11 @@ function toolranks.new_afteruse(itemstack, user, node, digparams)
   local level = toolranks.get_level(dugnodes)
   if lastlevel < level then
     local levelup_text = S(
-      "Your @1@2@3 just leveled up!",
+      "Your @1@2@3 just leveled up to @4!",
       toolranks.colors.green,
       itemdesc,
-      toolranks.colors.white
+      toolranks.colors.white,
+      level
     )
     minetest.chat_send_player(user:get_player_name(), levelup_text)
     minetest.sound_play("toolranks_levelup", {
